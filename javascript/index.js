@@ -18,6 +18,15 @@ function updateTime() {
 
   parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
   parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]");
+
+  let tokioElement = document.querySelector("#tokio");
+  let tokioDateElement = tokioElement.querySelector(".date");
+  let tokioTimeElement = tokioElement.querySelector(".time");
+
+  let tokioTime = moment().tz("Asia/Tokyo");
+
+  tokioDateElement.innerHTML = tokioTime.format("MMMM Do YYYY");
+  tokioTimeElement.innerHTML = tokioTime.format("h:mm:ss [<small>]A[</small>]");
 }
 
 setInterval(updateTime, 1000);

@@ -28,5 +28,20 @@ function updateTime() {
   tokioDateElement.innerHTML = tokioTime.format("MMMM Do YYYY");
   tokioTimeElement.innerHTML = tokioTime.format("h:mm:ss [<small>]A[</small>]");
 }
-
 setInterval(updateTime, 1000);
+
+function updateTime(event) {
+  let cityElement = event.target.value;
+  let cityTime = moment().tz(cityElement);
+  let allCities = document.querySelector("#city-container");
+  allCities.innerHTML = ` <div class="city">
+        <div class="city-specifications">
+          <h2></h2>
+          <div class="date"></div>
+        </div>
+        <div class="time"></div>
+      </div>`;
+}
+
+let citySelect = document.querySelector("#city-select");
+citySelect.addEventListener("change", updateTime);

@@ -45,7 +45,7 @@ function updateTimeAllCities(event) {
     cityTimeZone = moment.tz.guess();
   }
   let cityTime = moment().tz(cityTimeZone);
-  let cityName = cityTimeZone.split("/")[1];
+  let cityName = cityTimeZone.replace("-", "  ").split("/")[1];
   let allCities = document.querySelector("#city-container");
   allCities.innerHTML = ` <div class="city">
         <div class="city-specifications">

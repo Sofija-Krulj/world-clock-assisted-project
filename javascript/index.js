@@ -30,15 +30,17 @@ function updateTime() {
 }
 
 function updateTimeAllCities(event) {
-  let cityElement = event.target.value;
-  let cityTime = moment().tz(cityElement);
+  let cityTimeZone = event.target.value;
+  let cityTime = moment().tz(cityTimeZone);
   let allCities = document.querySelector("#city-container");
   allCities.innerHTML = ` <div class="city">
         <div class="city-specifications">
           <h2></h2>
-          <div class="date"></div>
+          <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
         </div>
-        <div class="time"></div>
+        <div class="time">${cityTime.format("h:mm:ss")}<small>${cityTime.format(
+    "A"
+  )}</small></div>
       </div>`;
 }
 setInterval(updateTime, 1000);

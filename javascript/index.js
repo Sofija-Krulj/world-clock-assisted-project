@@ -1,32 +1,42 @@
 function updateTime() {
   let losAngelesElement = document.querySelector("#los-angeles");
-  let losAngelesDateElement = losAngelesElement.querySelector(".date");
-  let losAngelesTimeElement = losAngelesElement.querySelector(".time");
+  if (losAngelesElement) {
+    let losAngelesDateElement = losAngelesElement.querySelector(".date");
+    let losAngelesTimeElement = losAngelesElement.querySelector(".time");
 
-  let losAngelesTime = moment().tz("America/Los_Angeles");
+    let losAngelesTime = moment().tz("America/Los_Angeles");
 
-  losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
-  losAngelesTimeElement.innerHTML = losAngelesTime.format(
-    "h:mm:ss [<small>]A[</small>]"
-  );
+    losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
+    losAngelesTimeElement.innerHTML = losAngelesTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 
   let parisElement = document.querySelector("#paris");
-  let parisDateElement = parisElement.querySelector(".date");
-  let parisTimeElement = parisElement.querySelector(".time");
+  if (parisElement) {
+    let parisDateElement = parisElement.querySelector(".date");
+    let parisTimeElement = parisElement.querySelector(".time");
 
-  let parisTime = moment().tz("Europe/Paris");
+    let parisTime = moment().tz("Europe/Paris");
 
-  parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
-  parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]");
+    parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
+    parisTimeElement.innerHTML = parisTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 
   let tokioElement = document.querySelector("#tokio");
-  let tokioDateElement = tokioElement.querySelector(".date");
-  let tokioTimeElement = tokioElement.querySelector(".time");
+  if (tokioElement) {
+    let tokioDateElement = tokioElement.querySelector(".date");
+    let tokioTimeElement = tokioElement.querySelector(".time");
 
-  let tokioTime = moment().tz("Asia/Tokyo");
+    let tokioTime = moment().tz("Asia/Tokyo");
 
-  tokioDateElement.innerHTML = tokioTime.format("MMMM Do YYYY");
-  tokioTimeElement.innerHTML = tokioTime.format("h:mm:ss [<small>]A[</small>]");
+    tokioDateElement.innerHTML = tokioTime.format("MMMM Do YYYY");
+    tokioTimeElement.innerHTML = tokioTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateTimeAllCities(event) {
@@ -40,7 +50,7 @@ function updateTimeAllCities(event) {
           <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
         </div>
         <div class="time">${cityTime.format("h:mm:ss")}<small>${cityTime.format(
-    "A"
+    " A"
   )}</small></div>
       </div>`;
 }

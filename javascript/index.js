@@ -32,10 +32,11 @@ function updateTime() {
 function updateTimeAllCities(event) {
   let cityTimeZone = event.target.value;
   let cityTime = moment().tz(cityTimeZone);
+  let cityName = cityTimeZone.split("/")[1];
   let allCities = document.querySelector("#city-container");
   allCities.innerHTML = ` <div class="city">
         <div class="city-specifications">
-          <h2>${cityTimeZone}</h2>
+          <h2>${cityName}</h2>
           <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
         </div>
         <div class="time">${cityTime.format("h:mm:ss")}<small>${cityTime.format(
